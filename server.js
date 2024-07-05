@@ -65,9 +65,26 @@ app.use(checkCsrfError);
 app.use(csrfMiddleware);
 app.use(routes); //Aqui é para usar as rotas! Deixar visível para ser usado
 
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
+
+/*
+app.listen ({
+    host: '0.0.0.0',
+    port: process.env.PORT ? Number(process.env.PORT) : 3333
+}).then(() =>{
+    console.log('HTTP Server Running')
+})
+*/
+
+/*
 app.on('pronto', ()=>{
     app.listen(3000, () =>{
         console.log('Acessar http://localhost:3000');
         console.log('Servidor executando na porta 3000');
     });
 });
+*/
